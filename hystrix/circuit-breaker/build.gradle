@@ -1,0 +1,65 @@
+def versions = [
+        java:"1.8",
+		spring: [
+			cloud: "1.0.0.RC2",
+			boot: "1.2.1.RELEASE"
+		]
+]
+
+buildscript {
+    repositories {
+        mavenCentral()
+    }
+    dependencies {
+        classpath "org.springframework.boot:spring-boot-gradle-plugin:1.2.1.RELEASE"
+        classpath "org.springframework:springloaded:1.2.1.RELEASE"
+    }
+}
+
+apply plugin: "java"
+apply plugin: "eclipse"
+apply plugin: "spring-boot"
+apply plugin: "application"
+
+def compatibilityVersion = 1.8
+sourceCompatibility = "${versions.java}"
+targetCompatibility = "${versions.java}"
+buildDir = "target"
+
+group = "se.js"
+version = "0.1.0"
+
+mainClassName = "se.js.sample.hystrix.circuitbreaker.Application"
+
+
+
+repositories {
+    mavenCentral()
+    mavenLocal()
+    maven {
+        url "http://repo.spring.io/milestone"
+    }
+}
+
+dependencies {
+    compile "org.springframework.cloud:spring-cloud-starter-parent:${versions.spring.cloud}"
+	compile "org.springframework.cloud:spring-cloud-starter-hystrix:${versions.spring.cloud}"
+    compile "org.springframework.boot:spring-boot-starter-web:${versions.spring.boot}"
+    compile "org.springframework.boot:spring-boot-starter-actuator:${versions.spring.boot}"
+ 	compile "org.springframework.cloud:spring-cloud-netflix:${versions.spring.cloud}"
+}
+
+jar {
+	manifest {
+		attributes 'Implementation-Title': 'Hystrix Dashborad Sample',
+				   'Implementation-Version': version,
+				   'Built-By': System.getProperty('user.name'),
+				   'Built-Date': new Date(),
+				   'Built-JDK': System.getProperty('java.version'),
+				   'Built-Gradle': gradle.gradleVersion
+	}
+}
+
+task wrapper(type: Wrapper) {
+    gradleVersion = '1.11'
+}

@@ -1,0 +1,7 @@
+info:
+  component: Hystrix Circuit Breaker Sample
+  
+logging:
+  level:
+    ROOT: INFO
+    org.springframework.web: INFO
