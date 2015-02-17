@@ -24,14 +24,13 @@ apply plugin: "application"
 def compatibilityVersion = 1.8
 sourceCompatibility = "${versions.java}"
 targetCompatibility = "${versions.java}"
-buildDir = "target"
+
+project.buildDir = "target"
 
 group = "se.js"
 version = "0.1.0"
 
 mainClassName = "se.js.sample.hystrix.dashboard.Application"
-
-
 
 repositories {
     mavenCentral()
