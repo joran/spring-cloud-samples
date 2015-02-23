@@ -28,7 +28,7 @@ Hystrix contains a small sample of Netflix Hystrix Dashboard and a sample applic
     * `http://localhost:8080/hystrix.stream` - this service exposes the hystrix event stream and can be consumed by the dashsboard
 
 
-3. Goto http://localhost:7979 with a browser and enter `http://localhost:8080/hystrix.stream` to monitor the sample application.
+3. Goto `http://localhost:7979` with a browser and enter `http://localhost:8080/hystrix.stream` to monitor the sample application.
 
 4. Make some calls to the sample aplication services and watch the dashboard
     ```
