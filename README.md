@@ -7,10 +7,10 @@ Hystrix contains a small sample of Netflix Hystrix Dashboard and a sample applic
 
 
 1. Start the dashboard:
-
+    ```
     cd hystrix/dashboard
     gradlew bootRun
-
+    ```
     This will start the dashboard application and make it available on `http://localhost:7979`
 
 2. Start the sample application:
