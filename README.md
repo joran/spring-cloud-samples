@@ -8,19 +8,15 @@ Hystrix contains a small sample of Netflix Hystrix Dashboard and a sample applic
 
 1. Start the dashboard:
 
-            ```
             cd hystrix/dashboard
             gradlew bootRun
-            ```
 
 This will start the dashboard application and make it available on `http://localhost:7979`
 
 2. Start the sample application:
 
-            ```
             cd hystrix/circuit-breaker
             gradlew bootRun
-            ```
 
 This will start the sample application and make it available on `http://localhost:8080`
 The sample application exposes some services through REST:
@@ -34,9 +30,8 @@ The sample application exposes some services through REST:
 3. Goto http://localhost:7979 with a browser and enter `http://localhost:8080/hystrix.stream` to monitor the sample application.
 
 4. Make some calls to the sample aplication services and watch the dashboard
-            ```
+
             curl http://localhost:8080/
             curl http://localhost:8080/fail
             http://localhost:8080/slow
             for x in {1..100}; do sleep 3 curl localhost:8080/unstable ;done
-            ```
