@@ -4,7 +4,7 @@
     <modelVersion>4.0.0</modelVersion>
 
     <groupId>se.sj</groupId>
-    <artifactId>config-client</artifactId>
+    <artifactId>spring-cloud-config-client-sample</artifactId>
     <version>0.1.0</version>
     <packaging>jar</packaging>
 
