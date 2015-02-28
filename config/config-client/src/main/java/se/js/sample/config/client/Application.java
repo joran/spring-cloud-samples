@@ -33,7 +33,7 @@ public class Application implements ApplicationListener<ApplicationEvent>{
 	// -- REST configuration ---
 	@RequestMapping("/")
 	public String home() {
-		return prop1 + " :: " + prop2 + " :: " + someProp + " :: " + props.getSomeProp2();
+		return prop1 + " :: " + prop2 + " :: " + someProp + " :: " + props.getSomeProp3();
 	}
 
 	public static void main(String[] args) {
@@ -48,6 +48,6 @@ public class Application implements ApplicationListener<ApplicationEvent>{
 		log.info("-- prop1: " + prop1);
 		log.info("-- prop2: " + prop2);
 		log.info("-- someProp: " + someProp);
-		log.info("-- ApplicationProperties.someProp2: " + props.getSomeProp2());
+		log.info("-- ApplicationProperties.someProp2: " + props.getSomeProp3());
 	}
 }
